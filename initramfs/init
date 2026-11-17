@@ -1,0 +1,291 @@
+#!/bin/sh
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+mkdir -p /dev/pts /dev/shm /dev/binderfs /sys/kernel/config /sys/kernel/debug /run /var/run /tmp /cache /persist /vendor /vendor/firmware_mnt /firmware_mnt /dsp /bt_firmware
+mount -t devpts devpts /dev/pts
+mount -t tmpfs tmpfs /run
+mount -t tmpfs tmpfs /tmp
+mount -t configfs configfs /sys/kernel/config
+mount -t debugfs debugfs /sys/kernel/debug
+mount -t pstore pstore /sys/fs/pstore 2>/dev/null || true
+
+# Redirect output to both console and /run/boot.log
+exec > /run/boot.log 2>&1
+set -x
+
+log_msg() {
+    echo "$1"
+    echo "$1" > /dev/kmsg 2>/dev/null || true
+    echo "$1" > /dev/tty0 2>/dev/null || true
+}
+
+log_msg "================================================================"
+log_msg " OnePlus 5T (dumpling) Android 17 Clean-Room Bring-Up"
+log_msg " Kernel: $(uname -r) ($(uname -v))"
+log_msg "================================================================"
+
+# 1. Mount Android 17 BinderFS
+if mount -t binder binder /dev/binderfs 2>/dev/null; then
+    chmod 0666 /dev/binderfs/binder /dev/binderfs/hwbinder /dev/binderfs/vndbinder 2>/dev/null || true
+    ln -sf /dev/binderfs/binder /dev/binder
+    ln -sf /dev/binderfs/hwbinder /dev/hwbinder
+    ln -sf /dev/binderfs/vndbinder /dev/vndbinder
+    log_msg "[STAGE 1] Android 17 BinderFS mounted (/dev/binder, /dev/hwbinder, /dev/vndbinder)"
+fi
+
+# 2. Configure USB ConfigFS Gadget (RNDIS + CDC ACM Serial Console)
+setup_usb_gadget() {
+    G=/sys/kernel/config/usb_gadget/g1
+    if [ ! -d "$G" ]; then
+        mkdir -p $G
+        echo 0x18d1 > $G/idVendor
+        echo 0x4ee7 > $G/idProduct
+        echo 0x0100 > $G/bcdDevice
+        echo 0x0200 > $G/bcdUSB
+        mkdir -p $G/strings/0x409
+        echo "0123456789ABCDEF" > $G/strings/0x409/serialnumber
+        echo "OnePlus" > $G/strings/0x409/manufacturer
+        echo "OnePlus 5T Android 17 Mainline 6.18" > $G/strings/0x409/product
+        mkdir -p $G/configs/c.1/strings/0x409
+        echo "rndis_acm" > $G/configs/c.1/strings/0x409/configuration
+        echo 500 > $G/configs/c.1/MaxPower
+        mkdir -p $G/functions/rndis.usb0
+        mkdir -p $G/functions/acm.gs0
+        ln -sf $G/functions/rndis.usb0 $G/configs/c.1/rndis.usb0
+        ln -sf $G/functions/acm.gs0 $G/configs/c.1/acm.gs0
+
+        /bin/qrtr-cfg 1 || true
+        mkdir -p $G/functions/ffs.diag /dev/ffs-diag 2>/dev/null || true
+        if mount -t functionfs diag /dev/ffs-diag 2>/dev/null; then
+            /bin/diag-router > /run/diag.log 2>&1 &
+            for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20; do
+                [ -e /dev/ffs-diag/ep1 ] && break
+                sleep 0.1
+            done
+            if [ -e /dev/ffs-diag/ep1 ]; then
+                ln -sf $G/functions/ffs.diag $G/configs/c.1/ffs.diag
+                echo "rndis_acm_diag" > $G/configs/c.1/strings/0x409/configuration
+                log_msg "[STAGE 2] diag FunctionFS /dev/ffs-diag ready"
+            else
+                log_msg "[STAGE 2] WARNING: /dev/ffs-diag/ep1 timeout; keeping rndis_acm"
+            fi
+        else
+            log_msg "[STAGE 2] WARNING: functionfs mount failed; keeping rndis_acm"
+        fi
+    fi
+    for i in 1 2 3 4 5 6 7 8 9 10; do
+        UDC=$(ls /sys/class/udc 2>/dev/null | head -n 1)
+        [ -n "$UDC" ] && break
+        sleep 0.3
+    done
+    if [ -n "$UDC" ]; then
+        CUR_UDC=$(cat $G/UDC 2>/dev/null || true)
+        if [ "$CUR_UDC" != "$UDC" ]; then
+            echo "" > $G/UDC 2>/dev/null || true
+            echo "$UDC" > $G/UDC 2>/dev/null || true
+        fi
+        ifconfig lo 127.0.0.1 up 2>/dev/null || true
+        ifconfig usb0 172.16.42.1 netmask 255.255.255.0 up 2>/dev/null || true
+        telnetd -l /bin/sh -b 0.0.0.0:2323 2>/dev/null || true
+        log_msg "[STAGE 2] USB Gadget bound to UDC=$UDC (usb0=172.16.42.1:2323, /dev/ttyACM0->ttyGS0)"
+    else
+        log_msg "[STAGE 2] WARNING: /sys/class/udc empty"
+    fi
+}
+setup_usb_gadget
+
+# Keep AMOLED panel at 5% brightness to avoid burn-in during bring-up
+for bl in /sys/class/backlight/*; do
+    [ -e "$bl/brightness" ] || continue
+    max=$(cat "$bl/max_brightness" 2>/dev/null || echo 1023)
+    pct5=$((max * 5 / 100))
+    [ "$pct5" -lt 1 ] && pct5=1
+    echo "$pct5" > "$bl/brightness" 2>/dev/null || true
+done
+
+# Spawn serial shell on /dev/ttyGS0
+(
+    while true; do
+        if [ -c /dev/ttyGS0 ]; then
+            setsid sh -c "exec sh </dev/ttyGS0 >/dev/ttyGS0 2>&1"
+        fi
+        sleep 2
+    done
+) &
+
+# 3. Wait for UFS block devices & create /dev/block/by-name and /dev/disk/by-partlabel symlinks
+for i in 1 2 3 4 5 6 7 8 9 10; do
+    [ -b /dev/sda1 ] && break
+    sleep 0.3
+done
+mkdir -p /dev/block/by-name /dev/block/bootdevice/by-name /dev/disk/by-partlabel
+for uevent in /sys/class/block/sd*/uevent; do
+    [ -f "$uevent" ] || continue
+    DEVNAME=$(grep "^DEVNAME=" "$uevent" | cut -d= -f2)
+    PARTNAME=$(grep "^PARTNAME=" "$uevent" | cut -d= -f2)
+    if [ -n "$DEVNAME" ] && [ -n "$PARTNAME" ]; then
+        ln -sf "/dev/$DEVNAME" "/dev/block/by-name/$PARTNAME"
+        ln -sf "/dev/$DEVNAME" "/dev/block/bootdevice/by-name/$PARTNAME"
+        ln -sf "/dev/$DEVNAME" "/dev/disk/by-partlabel/$PARTNAME"
+    fi
+done
+log_msg "[STAGE 3] UFS partitions linked ($(ls -1 /dev/block/by-name | wc -l) partitions)"
+
+# Mount /persist, /vendor, /firmware_mnt (/vendor/firmware_mnt), /dsp, /bt_firmware read-only
+mount -t ext4 -o ro /dev/block/by-name/persist /persist 2>/dev/null || true
+mkdir -p /mnt/vendor && rm -rf /mnt/vendor/persist && ln -sfn /persist /mnt/vendor/persist
+mount -t ext4 -o ro /dev/block/by-name/vendor /vendor 2>/dev/null || true
+mount -t vfat -o ro /dev/block/by-name/modem /firmware_mnt 2>/dev/null || true
+mount -t vfat -o ro /dev/block/by-name/modem /vendor/firmware_mnt 2>/dev/null || true
+mount -t ext4 -o ro /dev/block/by-name/dsp /dsp 2>/dev/null || true
+mount -t vfat -o ro /dev/block/by-name/bluetooth /bt_firmware 2>/dev/null || true
+
+# Symlink split modem firmware and protection domain JSONs into /lib/firmware/qcom/msm8998/oneplus/
+for f in /firmware_mnt/image/modem.* /firmware_mnt/image/*.jsn; do
+    [ -e "$f" ] && ln -sf "$f" /lib/firmware/qcom/msm8998/oneplus/
+done
+[ -e /firmware_mnt/image/modem.mdt ] && ln -sf /firmware_mnt/image/modem.mdt /lib/firmware/qcom/msm8998/oneplus/modem.mbn
+for f in /firmware_mnt/image/cpe_9335.* /firmware_mnt/image/cmnlib*; do
+    [ -e "$f" ] && ln -sf "$f" /lib/firmware/
+done
+
+# Mount /cache (sda3) rw to persist logs across reboots
+if mount -t ext4 -o rw /dev/block/by-name/cache /cache 2>/dev/null; then
+    log_msg "[STAGE 3] Mounted /persist(ro), /vendor(ro), /firmware_mnt(ro), /cache(rw)"
+fi
+
+# 4. Start Qualcomm Open-Source Userspace Daemons BEFORE Remoteproc
+# Note: Linux 6.18 has in-kernel CONFIG_QCOM_PD_MAPPER=y for qcom,msm8998
+log_msg "[STAGE 4] Starting QRTR, rmtfs (read-only RAM shadow buffers), tqftpserv..."
+/bin/sns-reg2-qmi > /run/sns_reg2.log 2>&1 &
+/bin/rmtfs -P -r -o /dev/block/by-name -v > /run/rmtfs.log 2>&1 &
+/bin/tqftpserv > /run/tqftpserv.log 2>&1 &
+sleep 1
+
+# Load Remoteproc & Wi-Fi modules now that rmtfs (0x00e) is listening on QRTR
+log_msg "[STAGE 4] Loading qcom-rng, ipa, qcom_q6v5_pas, qcom_q6v5_mss, ath10k_snoc, venus..."
+modprobe qcom-rng 2>&1 || true
+modprobe ipa 2>&1 || true
+modprobe qcom_q6v5_pas 2>&1 || true
+modprobe qcom_q6v5_mss 2>&1 || true
+modprobe ath10k_snoc 2>&1 || true
+modprobe venus-core 2>&1 || true
+modprobe venus-dec 2>&1 || true
+modprobe venus-enc 2>&1 || true
+modprobe oneplus_dash 2>&1 || true
+modprobe nxp_p61_ese 2>&1 || true
+
+for r in /sys/class/remoteproc/remoteproc*; do
+    [ -d "$r" ] || continue
+    RNAME=$(cat "$r/name" 2>/dev/null || echo "unknown")
+    RSTATE=$(cat "$r/state" 2>/dev/null || echo "unknown")
+    if [ "$RSTATE" = "offline" ]; then
+        echo start > "$r/state" 2>&1 || true
+    fi
+done
+sleep 4
+
+for r in /sys/class/remoteproc/remoteproc*; do
+    [ -d "$r" ] || continue
+    log_msg "[RPROC] $(basename $r): name=$(cat $r/name 2>/dev/null) state=$(cat $r/state 2>/dev/null)"
+done
+
+for c in /sys/bus/slimbus/devices/*/cpe_load; do
+    [ -w "$c" ] || continue
+    echo 1 > "$c" 2>&1 || true
+    cdir=$(dirname "$c")
+    log_msg "[CPE] $(basename "$cdir"): $(cat "$cdir/cpe_status" 2>/dev/null)"
+done
+
+for i in 1 2 3 4 5 6 7 8; do
+    [ -d /sys/class/net/wlan0 ] && break
+    sleep 0.5
+done
+if [ -d /sys/class/net/wlan0 ]; then
+    WMAC=""
+    if [ -s /persist/wlan_mac.bin ]; then
+        WMAC=$(sed -n "s/^Intf0MacAddress=\([0-9A-Fa-f]\{12\}\).*/\1/p" /persist/wlan_mac.bin | head -n 1 | sed "s/../&:/g;s/:$//")
+    fi
+    if [ -z "$WMAC" ] && [ -x /bin/wlan-mac-qmi ]; then
+        /bin/wlan-mac-qmi > /run/wlan_mac.log 2>&1 || true
+        WMAC=$(grep -E '^[0-9A-Fa-f]{2}(:[0-9A-Fa-f]{2}){5}$' /run/wlan_mac.log | head -n 1)
+    fi
+    if [ -n "$WMAC" ]; then
+        ip link set dev wlan0 down 2>/dev/null || ifconfig wlan0 down 2>/dev/null || true
+        ip link set dev wlan0 address "$WMAC" 2>/dev/null || ifconfig wlan0 hw ether "$WMAC" 2>/dev/null || true
+        log_msg "[WIFI] Set wlan0 MAC=$WMAC (now $(cat /sys/class/net/wlan0/address 2>/dev/null))"
+    else
+        log_msg "[WIFI] WARNING: factory WLAN MAC unavailable (keeping $(cat /sys/class/net/wlan0/address 2>/dev/null))"
+    fi
+fi
+
+/bin/qrtr-lookup > /run/qrtr_lookup.txt 2>&1 || true
+log_msg "[QRTR] Active QMI services: $(wc -l < /run/qrtr_lookup.txt) lines"
+
+# 5. Start Clean-Room Android 17 HAL Services
+log_msg "[STAGE 5] Starting Clean-Room Android 17 HALs..."
+/bin/oneplus5t-sysfs-hals &
+/bin/oneplus5t-sensors-slpi &
+/bin/oneplus5t-ril-qmi &
+sleep 3
+
+# Re-verify USB Gadget binding
+setup_usb_gadget
+
+# 6. Collect & Persist Full Telemetry to /run and /cache
+dmesg > /run/dmesg_boot.log 2>&1 || true
+dmesg > /run/dmesg.log 2>&1 || true
+/bin/qrtr-lookup > /run/qrtr_lookup.txt 2>&1 || true
+
+log_msg "================================================================"
+log_msg " LIVE TELEMETRY SUMMARY (Linux $(uname -r))"
+log_msg "================================================================"
+if [ -f /run/oneplus5t_hal_telemetry.json ]; then
+    log_msg "[HAL-SYSFS] $(tr -d "\n" < /run/oneplus5t_hal_telemetry.json)"
+fi
+if [ -f /run/oneplus5t_sensors_status.json ]; then
+    log_msg "[HAL-SENSORS] $(tr -d "\n" < /run/oneplus5t_sensors_status.json)"
+fi
+if [ -f /run/oneplus5t_ril_status.json ]; then
+    log_msg "[HAL-RIL] $(tr -d "\n" < /run/oneplus5t_ril_status.json)"
+fi
+log_msg "[USB-UDC] $(ls /sys/class/udc 2>/dev/null | tr "\n" " ") | state=$(cat /sys/class/udc/*/state 2>/dev/null || echo none)"
+log_msg "[POWER] $(ls /sys/class/power_supply 2>/dev/null | tr "\n" " ")"
+log_msg "================================================================"
+
+if grep -q " /cache " /proc/mounts; then
+    cp /run/boot.log /cache/boot.log 2>/dev/null || true
+    cp /run/dmesg.log /cache/dmesg.log 2>/dev/null || true
+    cp /run/qrtr_lookup.txt /cache/qrtr_lookup.txt 2>/dev/null || true
+    cp /run/rmtfs.log /cache/rmtfs.log 2>/dev/null || true
+    cp /run/sns_reg2.log /cache/sns_reg2.log 2>/dev/null || true
+    cp /run/tqftpserv.log /cache/tqftpserv.log 2>/dev/null || true
+    cp /run/diag.log /cache/diag.log 2>/dev/null || true
+    cp /run/wlan_mac.log /cache/wlan_mac.log 2>/dev/null || true
+    cp /run/dmesg_boot.log /cache/dmesg_boot.log 2>/dev/null || true
+    cp /run/*.json /cache/ 2>/dev/null || true
+    sync
+    log_msg "[STAGE 6] Saved boot.log, dmesg.log, qrtr_lookup.txt, rmtfs.log, and *.json to /cache!"
+fi
+
+# Keep init alive and periodically sync logs to /cache
+while true; do
+    sleep 10
+    dmesg > /run/dmesg.log 2>/dev/null || true
+    if grep -q " /cache " /proc/mounts; then
+        cp /run/boot.log /cache/boot.log 2>/dev/null || true
+        cp /run/dmesg.log /cache/dmesg.log 2>/dev/null || true
+        cp /run/qrtr_lookup.txt /cache/qrtr_lookup.txt 2>/dev/null || true
+        cp /run/rmtfs.log /cache/rmtfs.log 2>/dev/null || true
+    cp /run/sns_reg2.log /cache/sns_reg2.log 2>/dev/null || true
+    cp /run/tqftpserv.log /cache/tqftpserv.log 2>/dev/null || true
+    cp /run/diag.log /cache/diag.log 2>/dev/null || true
+    cp /run/wlan_mac.log /cache/wlan_mac.log 2>/dev/null || true
+    cp /run/dmesg_boot.log /cache/dmesg_boot.log 2>/dev/null || true
+        cp /run/*.json /cache/ 2>/dev/null || true
+        sync
+    fi
+done
