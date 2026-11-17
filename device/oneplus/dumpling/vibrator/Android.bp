@@ -1,0 +1,23 @@
+cc_binary {
+    name: "android.hardware.vibrator-service.oneplus5t",
+    relative_install_path: "hw",
+    init_rc: ["vibrator-oneplus5t.rc"],
+    vintf_fragments: ["vibrator-oneplus5t.xml"],
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "libcutils",
+        "liblog",
+        "libutils",
+        "android.hardware.vibrator-V4-ndk",
+        "android.hardware.common-V2-ndk",
+        "android.hardware.common.fmq-V1-ndk",
+        "android.media.audio.common.types-V5-ndk",
+    ],
+    srcs: [
+        "Vibrator.cpp",
+        "VibratorManager.cpp",
+        "main.cpp",
+    ],
+}

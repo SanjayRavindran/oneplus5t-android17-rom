@@ -1,0 +1,101 @@
+import /vendor/etc/init/hw/init.qcom.usb.rc
+
+on early-init
+    setprop sys.use_memfd true
+    setprop vendor.minigbm.debug nocompression
+    setprop persist.graphics.egl ""
+    setprop debug.sf.latch_unsignaled 0
+    setprop debug.sf.auto_latch_unsignaled false
+    mkdir /mnt/vendor 0755 system system
+    mkdir /mnt/vendor/persist 0771 system system
+
+on init
+    symlink /dev/block/platform/soc@0/1da4000.ufshc /dev/block/bootdevice
+    # Prevent s2idle suspend disconnecting USB and display during active bring-up
+    write /sys/power/wake_lock DumplingStayAwake
+    # Conservative AMOLED brightness (5%) and system HAL permissions
+    write /sys/class/backlight/c994000.dsi.0/brightness 51
+    chown system system /sys/class/backlight/c994000.dsi.0/brightness
+    chown system system /sys/class/backlight/c994000.dsi.0/max_brightness
+    chmod 0664 /sys/class/backlight/c994000.dsi.0/brightness
+    chown system graphics /sys/class/backlight/c994000.dsi.0/bl_power
+    chmod 0664 /sys/class/backlight/c994000.dsi.0/bl_power
+    chown system system /sys/class/leds/rgb:status/brightness
+    chown system system /sys/class/leds/rgb:status/multi_intensity
+    chmod 0664 /sys/class/leds/rgb:status/brightness
+    chmod 0664 /sys/class/leds/rgb:status/multi_intensity
+
+on fs
+    wait /dev/block/platform/soc@0/1da4000.ufshc/by-name/userdata
+    mount_all /vendor/etc/fstab.qcom --early
+    restorecon_recursive /mnt/vendor/persist
+
+on post-fs
+    insmod /vendor/lib/modules/qcom-rng.ko
+
+on late-fs
+    # Start services for bootanim then mount RW /data
+    start surfaceflinger
+    start bootanim
+    mount_all /vendor/etc/fstab.qcom --late
+
+on post-fs-data
+    mkdir /data/vendor 0771 root root
+    mkdir /data/vendor/tmp 0771 root system
+    mkdir /data/vendor/tmp/tqftpserv 0700 root system
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /data/vendor/radio 0777 system system
+    mkdir /data/vendor/tombstones 0771 root root
+    mkdir /data/vendor/tombstones/pstore 0771 root system
+    setprop vold.post_fs_data_done 1
+
+on boot
+    start vendor.rmtfs
+    start vendor.tqftpserv
+    start vendor.diag-router
+    start vendor.sns-reg2-qmi
+    start vendor.oneplus5t-hw-init
+
+on property:sys.boot_completed=1
+    write /sys/power/wake_lock DumplingStayAwake
+    setprop persist.sys.usb.config adb
+    exec - system system -- /system/bin/settings put global stay_on_while_plugged_in 7
+    exec - system system -- /system/bin/settings put global adb_enabled 1
+    exec - system system -- /system/bin/settings put global device_provisioned 1
+    exec - system system -- /system/bin/settings put secure user_setup_complete 1
+    exec - root root -- /system/bin/pm disable com.google.android.setupwizard/com.google.android.setupwizard.SetupWizardActivity
+
+service vendor.rmtfs /vendor/bin/rmtfs -P -r -o /dev/block/platform/soc@0/1da4000.ufshc/by-name -v
+    class core
+    user root
+    group system
+    disabled
+
+service vendor.tqftpserv /vendor/bin/tqftpserv
+    class core
+    user root
+    group system
+    disabled
+
+service vendor.diag-router /vendor/bin/diag-router
+    class core
+    user root
+    group system
+    disabled
+
+service vendor.sns-reg2-qmi /vendor/bin/sns-reg2-qmi
+    class core
+    user root
+    group system
+    disabled
+    seclabel u:r:rmtfs:s0
+
+service vendor.oneplus5t-hw-init /vendor/bin/sh /vendor/bin/init.oneplus5t.hw.sh
+    class core
+    user root
+    group root system
+    oneshot
+    disabled
+    seclabel u:r:rmtfs:s0

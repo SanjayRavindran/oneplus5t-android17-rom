@@ -1,0 +1,2 @@
+allow hal_sensors_default self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow hal_sensors_default system_server_tmpfs:file { getattr map read write };

@@ -1,0 +1,15 @@
+| All HIDL binderized services (registered with hwservicemanager)
+VINTF R Interface Thread Use Server Clients
+
+| All HIDL interfaces getService() has ever returned as a passthrough interface;
+| PIDs / processes shown below might be inaccurate because the process
+| might have relinquished the interface or might have died.
+| The Server / Server CMD column can be ignored.
+| The Clients / Clients CMD column shows all process that have ever dlopen'ed 
+| the library and successfully fetched the passthrough implementation.
+VINTF R Interface Thread Use Server Clients
+
+| All available HIDL passthrough implementations (all -impl.so files).
+| These may return subclasses through their respective HIDL_FETCH_I* functions.
+VINTF R Interface Thread Use Server Clients
+

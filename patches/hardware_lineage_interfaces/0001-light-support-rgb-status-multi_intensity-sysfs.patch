@@ -1,0 +1,50 @@
+diff --git a/light/Devices.cpp b/light/Devices.cpp
+index dd71bf7..e423c6d 100644
+--- a/light/Devices.cpp
++++ b/light/Devices.cpp
+@@ -165,7 +165,7 @@ static std::vector<RgbLedDevice> getNotificationRgbLedDevices() {
+ }
+ 
+ static const std::string kNotificationLedDevices[] = {
+-        "charging", "left", "white", "white:indicator", "white:status",
++        "charging", "left", "white", "white:indicator", "white:status", "rgb:status",
+ };
+ 
+ static std::vector<LedDevice> getNotificationLedDevices() {
+diff --git a/light/devices/LedDevice.cpp b/light/devices/LedDevice.cpp
+index 79ef61a..a469953 100644
+--- a/light/devices/LedDevice.cpp
++++ b/light/devices/LedDevice.cpp
+@@ -75,6 +75,7 @@ LedDevice::LedDevice(std::string name)
+                          std::ifstream(mBasePath + kPauseLoNode).good() &&
+                          std::ifstream(mBasePath + kPauseHiNode).good() &&
+                          std::ifstream(mBasePath + kRampStepMsNode).good();
++    mSupportsMultiIntensity = std::ifstream(mBasePath + "multi_intensity").good();
+ }
+ 
+ bool LedDevice::isOk() const {
+@@ -124,6 +125,12 @@ bool LedDevice::setState(const State& state) {
+             break;
+     }
+ 
++    if (mSupportsMultiIntensity) {
++        std::string rgb = std::to_string(state.color.red) + " " +
++                          std::to_string(state.color.green) + " " +
++                          std::to_string(state.color.blue);
++        writeToFile(mBasePath + "multi_intensity", rgb);
++    }
+     return setBrightness(state.color.toBrightness(), mode, flashOnMs, flashOffMs);
+ }
+ 
+diff --git a/light/devices/LedDevice.h b/light/devices/LedDevice.h
+index 026f910..331da09 100644
+--- a/light/devices/LedDevice.h
++++ b/light/devices/LedDevice.h
+@@ -99,6 +99,7 @@ class LedDevice : public IDevice {
+     std::string mBreathNode;
+     bool mSupportsTimedUpstream;
+     bool mSupportsTimedQcom;
++    bool mSupportsMultiIntensity;
+ };
+ 
+ }  // namespace light

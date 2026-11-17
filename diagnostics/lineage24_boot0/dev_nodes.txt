@@ -1,0 +1,43 @@
+ls: /dev/nxp*: No such file or directory
+ls: /dev/ipa*: No such file or directory
+
+crw-rw---- 1 system system  10, 258 1970-01-01 00:00 /dev/goodix_fp
+crw-rw---- 1 system camera 245,   0 1970-01-01 00:00 /dev/media0
+crw-rw---- 1 system drmrpc  10, 257 1970-01-01 00:00 /dev/qseecom
+crw-rw---- 1 system camera  81,   6 1970-01-01 00:00 /dev/v4l-subdev0
+crw-rw---- 1 system camera  81,   7 1970-01-01 00:00 /dev/v4l-subdev1
+crw-rw---- 1 system camera  81,  16 1970-01-01 00:00 /dev/v4l-subdev10
+crw-rw---- 1 system camera  81,  17 1970-01-01 00:00 /dev/v4l-subdev11
+crw-rw---- 1 system camera  81,  18 1970-01-01 00:00 /dev/v4l-subdev12
+crw-rw---- 1 system camera  81,  19 1970-01-01 00:00 /dev/v4l-subdev13
+crw-rw---- 1 system camera  81,  20 1970-01-01 00:00 /dev/v4l-subdev14
+crw-rw---- 1 system camera  81,  21 1970-01-01 00:00 /dev/v4l-subdev15
+crw-rw---- 1 system camera  81,  22 1970-01-01 00:00 /dev/v4l-subdev16
+crw-rw---- 1 system camera  81,  23 1970-01-01 00:00 /dev/v4l-subdev17
+crw-rw---- 1 system camera  81,  24 1970-01-01 00:00 /dev/v4l-subdev18
+crw-rw---- 1 system camera  81,  25 1970-01-01 00:00 /dev/v4l-subdev19
+crw-rw---- 1 system camera  81,   8 1970-01-01 00:00 /dev/v4l-subdev2
+crw-rw---- 1 system camera  81,  26 1970-01-01 00:00 /dev/v4l-subdev20
+crw-rw---- 1 system camera  81,  27 1970-01-01 00:00 /dev/v4l-subdev21
+crw-rw---- 1 system camera  81,   9 1970-01-01 00:00 /dev/v4l-subdev3
+crw-rw---- 1 system camera  81,  10 1970-01-01 00:00 /dev/v4l-subdev4
+crw-rw---- 1 system camera  81,  11 1970-01-01 00:00 /dev/v4l-subdev5
+crw-rw---- 1 system camera  81,  12 1970-01-01 00:00 /dev/v4l-subdev6
+crw-rw---- 1 system camera  81,  13 1970-01-01 00:00 /dev/v4l-subdev7
+crw-rw---- 1 system camera  81,  14 1970-01-01 00:00 /dev/v4l-subdev8
+crw-rw---- 1 system camera  81,  15 1970-01-01 00:00 /dev/v4l-subdev9
+crw-rw---- 1 system camera  81,   0 1970-01-01 00:00 /dev/video0
+crw-rw---- 1 system camera  81,   1 1970-01-01 00:00 /dev/video1
+crw-rw---- 1 system camera  81,   2 1970-01-01 00:00 /dev/video2
+crw-rw---- 1 system camera  81,   3 1970-01-01 00:00 /dev/video3
+crw-rw---- 1 system camera  81,   4 1970-01-01 00:00 /dev/video4
+crw-rw---- 1 system camera  81,   5 1970-01-01 00:00 /dev/video5
+crw-rw---- 1 system camera  81,  28 1970-01-01 00:00 /dev/video6
+crw-rw---- 1 system camera  81,  29 1970-01-01 00:00 /dev/video7
+
+/dev/dri:
+total 0
+drwxr-xr-x  2 root   root           80 1970-01-01 00:00 .
+drwxr-xr-x 22 root   root         3860 1970-01-01 00:00 ..
+crw-rw-rw-  1 system graphics 226,   0 1970-01-01 00:00 card0
+crw-rw-rw-  1 system graphics 226, 128 1970-01-01 00:00 renderD128

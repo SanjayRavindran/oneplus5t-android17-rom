@@ -1,0 +1,25 @@
+type rmtfs, domain;
+type rmtfs_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(rmtfs)
+permissive rmtfs;
+type tqftpserv, domain;
+type tqftpserv_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(tqftpserv)
+permissive tqftpserv;
+type diag_router, domain;
+type diag_router_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(diag_router)
+permissive diag_router;
+type goodix_device, dev_type;
+type qseecom_device, dev_type;
+allow rmtfs self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow rmtfs block_device:dir r_dir_perms;
+allow rmtfs block_device:blk_file getattr;
+allow rmtfs sysfs:dir r_dir_perms;
+allow rmtfs sysfs:file r_file_perms;
+allow rmtfs sysfs_net:dir r_dir_perms;
+allow rmtfs sysfs_block:dir r_dir_perms;
+allow rmtfs vendor_toolbox_exec:file rx_file_perms;
+allow rmtfs vendor_data_file:file rw_file_perms;
+allow tqftpserv self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow diag_router self:qipcrtr_socket create_socket_perms_no_ioctl;

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="evo" fetch="https://github.com/Evolution-X" revision="refs/heads/cnb" sync-c="true" sync-j="4" />
+  <project path="vendor/gms" name="vendor_gms" remote="evo" clone-depth="1" />
+</manifest>

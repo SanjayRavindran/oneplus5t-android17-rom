@@ -1,0 +1,209 @@
+ls: /sys/kernel/tracing: No such file or directory
+ls: /sys/kernel/debug/tracing: Invalid argument
+/sys/fs/bpf:
+total 0
+drwxrwxrwt 10 root root u:object_r:fs_bpf:s0                0 1970-01-01 00:00 .
+drwxr-xr-x 12 root root u:object_r:sysfs:s0                 0 1970-01-01 00:00 ..
+drwxrwxrwt  2 root root u:object_r:fs_bpf_loader:s0         0 1970-01-01 00:00 loader
+-rw-rw----  1 root root u:object_r:fs_bpf:s0                0 1970-01-01 00:00 map_bpfRingbufProg_test_ringbuf
+drwxrwxrwt  2 root root u:object_r:fs_bpf_net_private:s0    0 1970-01-01 00:00 net_private
+drwxrwxrwt  2 root root u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 net_shared
+drwxrwxrwt  2 root root u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 netd_readonly
+drwxrwxrwt  3 root root u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 netd_shared
+-r--r-----  1 root root u:object_r:fs_bpf:s0                0 1970-01-01 00:00 prog_bpfRingbufProg_skfilter_ringbuf_test
+drwxrwxrwt  2 root root u:object_r:fs_bpf_tethering:s0      0 1970-01-01 00:00 tethering
+drwxrwxrwt  2 root root u:object_r:fs_bpf_uprobestats:s0    0 1970-01-01 00:00 uprobestats
+drwxrwxrwt  2 root root u:object_r:fs_bpf_vendor:s0         0 1970-01-01 00:00 vendor
+
+/sys/fs/bpf/loader:
+total 0
+drwxrwxrwt  2 root root u:object_r:fs_bpf_loader:s0  0 1970-01-01 00:00 .
+drwxrwxrwt 10 root root u:object_r:fs_bpf:s0         0 1970-01-01 00:00 ..
+
+/sys/fs/bpf/net_private:
+total 0
+drwxrwxrwt  2 root root u:object_r:fs_bpf_net_private:s0  0 1970-01-01 00:00 .
+drwxrwxrwt 10 root root u:object_r:fs_bpf:s0              0 1970-01-01 00:00 ..
+
+/sys/fs/bpf/net_shared:
+total 0
+drwxrwxrwt  2 root root   u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 .
+drwxrwxrwt 10 root root   u:object_r:fs_bpf:s0             0 1970-01-01 00:00 ..
+-rw-rw----  1 root system u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 map_clatd_clat_egress4_map
+-rw-rw----  1 root system u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 map_clatd_clat_ingress6_map
+-rw-rw----  1 root system u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 map_dscpPolicy_ipv4_dscp_policies_map
+-rw-rw----  1 root system u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 map_dscpPolicy_ipv6_dscp_policies_map
+----------  1 root root   u:object_r:fs_bpf_loader:s0      0 1970-01-01 00:00 map_dscpPolicy_socket_policy_cache_map
+-r--r-----  1 root system u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 prog_clatd_schedcls_egress4_clat_rawip
+-r--r-----  1 root system u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 prog_clatd_schedcls_ingress6_clat_ether
+-r--r-----  1 root system u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 prog_clatd_schedcls_ingress6_clat_rawip
+-r--r-----  1 root system u:object_r:fs_bpf_net_shared:s0  0 1970-01-01 00:00 prog_dscpPolicy_schedcls_set_dscp_ether
+
+/sys/fs/bpf/netd_readonly:
+total 0
+drwxrwxrwt  2 root root u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 .
+drwxrwxrwt 10 root root u:object_r:fs_bpf:s0                0 1970-01-01 00:00 ..
+
+/sys/fs/bpf/netd_shared:
+total 0
+drwxrwxrwt  3 root root        u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 .
+drwxrwxrwt 10 root root        u:object_r:fs_bpf:s0                0 1970-01-01 00:00 ..
+drwxrwxrwt  2 root root        u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 mainline_done
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_app_uid_stats_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_blocked_ports_map
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_configuration_map
+-rw-rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 map_netd_cookie_tag_map
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_data_saver_enabled_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_iface_index_name_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_iface_stats_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_ingress_discard_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_l4s_accecn_enabled_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_l4s_conn_counter
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_local_net_access_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_local_net_blocked_uid_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_local_net_cache_generation_id_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_local_net_note_op_cache_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_local_net_note_op_enabled_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_local_net_note_op_ringbuf
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_local_net_uid_host_allowlist_map
+-rw-rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 map_netd_lock_array_test_map
+-rw-rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 map_netd_lock_hash_test_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_loopback_access_cache_map
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_loopback_access_metrics_enabled_map
+----rw----  1 root system      u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_loopback_access_ringbuf
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_loopback_checks_enabled_map
+-rw-rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 map_netd_netd_pid_map
+----rw----  1 root system      u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_packet_trace_enabled_map
+----rw----  1 root system      u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_packet_trace_ringbuf
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_permission_propagation_enabled_map
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_sk_storage
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_stats_map_A
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_stats_map_B
+----rw----  1 root net_bw_acct u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 map_netd_uid_counterset_map
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_uid_migration_enabled_map
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_uid_owner_map
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_uid_permission_chunk_map
+-r--rw----  1 root net_bw_acct u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 map_netd_uid_permission_map
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_bind4_inet4_bind
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_bind6_inet6_bind
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_cgroupsock_inet_create
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_cgroupsockrelease_inet_release
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_connect4_inet4_connect
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_connect6_inet6_connect
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_egress_stats
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_getsockopt_prog
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_ingress_stats
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_recvmsg4_udp4_recvmsg
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_recvmsg6_udp6_recvmsg
+-r--r-----  1 root net_admin   u:object_r:fs_bpf_net_shared:s0     0 1970-01-01 00:00 prog_netd_schedact_ingress_account
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_sendmsg4_udp4_sendmsg
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_sendmsg6_udp6_sendmsg
+-r--r-----  1 root root        u:object_r:fs_bpf_netd_readonly:s0  0 1970-01-01 00:00 prog_netd_setsockopt_prog
+-r--r-----  1 root net_admin   u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 prog_netd_skfilter_allowlist_xtbpf
+-r--r-----  1 root net_admin   u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 prog_netd_skfilter_denylist_xtbpf
+-r--r-----  1 root net_admin   u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 prog_netd_skfilter_egress_xtbpf
+-r--r-----  1 root net_admin   u:object_r:fs_bpf_netd_shared:s0    0 1970-01-01 00:00 prog_netd_skfilter_ingress_xtbpf
+
+/sys/fs/bpf/netd_shared/mainline_done:
+total 0
+drwxrwxrwt 2 root root u:object_r:fs_bpf_netd_shared:s0  0 1970-01-01 00:00 .
+drwxrwxrwt 3 root root u:object_r:fs_bpf_netd_shared:s0  0 1970-01-01 00:00 ..
+
+/sys/fs/bpf/tethering:
+total 0
+drwxrwxrwt  2 root root          u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 .
+drwxrwxrwt 10 root root          u:object_r:fs_bpf:s0            0 1970-01-01 00:00 ..
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_dev_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_downstream4_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_downstream64_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_downstream6_map
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_error_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_limit_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_stats_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_upstream4_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_offload_tether_upstream6_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_test_bitmap
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_test_kernel_stats_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_test_tether2_downstream6_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_test_tether3_downstream6_map
+-rw-rw----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 map_test_tether_downstream6_map
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 prog_offload_schedcls_tether_downstream4_ether
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 prog_offload_schedcls_tether_downstream4_rawip
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 prog_offload_schedcls_tether_downstream6_ether
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 prog_offload_schedcls_tether_downstream6_rawip
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 prog_offload_schedcls_tether_upstream4_ether
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 prog_offload_schedcls_tether_upstream4_rawip
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 prog_offload_schedcls_tether_upstream6_ether
+-r--r-----  1 root network_stack u:object_r:fs_bpf_tethering:s0  0 1970-01-01 00:00 prog_offload_schedcls_tether_upstream6_rawip
+
+/sys/fs/bpf/uprobestats:
+total 0
+drwxrwxrwt  2 root        root        u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 .
+drwxrwxrwt 10 root        root        u:object_r:fs_bpf:s0              0 1970-01-01 00:00 ..
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_Accessibility_output_buf
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_ArtTest_output_buf_aot
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_ArtTest_output_buf_jit
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_Binder_interfaces
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_Binder_output_buf
+----rw----  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_BitmapAllocation_active_bitmaps
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_BitmapAllocation_output
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_BitmapAllocation_output_buf
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_DisruptiveApp_BindServiceLocked_output_buf
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_DisruptiveApp_ComponentEnabledSetting_output_buf
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_GenericInstrumentation_call_detail_buf
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_GenericInstrumentation_call_timestamp_buf
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_ProcessManagement_output_buf
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_ProcessManagement_process_change_output_buf
+-rw-------  1 uprobestats uprobestats u:object_r:fs_bpf_uprobestats:s0  0 1970-01-01 00:00 map_ProcessManagement_update_device_idle_temp_allowlist_records
+
+/sys/fs/bpf/vendor:
+total 0
+drwxrwxrwt  2 root root   u:object_r:fs_bpf_vendor:s0  0 1970-01-01 00:00 .
+drwxrwxrwt 10 root root   u:object_r:fs_bpf:s0         0 1970-01-01 00:00 ..
+-r--r-----  1 root system u:object_r:fs_bpf_vendor:s0  0 1970-01-01 00:00 prog_filterPowerSupplyEvents_skfilter_power_supply
+
+/system/etc/bpf:
+total 48
+drwxr-xr-x  6 root root u:object_r:system_file:s0   299 2026-11-17 04:35 .
+drwxr-xr-x 22 root root u:object_r:system_file:s0  1467 2026-11-17 04:36 ..
+-rw-r--r--  1 root root u:object_r:system_file:s0  1984 2026-11-17 02:56 bpfRingbufProg.bpf
+drwxr-xr-x  2 root root u:object_r:system_file:s0    54 2026-11-17 04:35 cputimeinstate
+drwxr-xr-x  2 root root u:object_r:system_file:s0    53 2026-11-17 04:35 dmabuf
+-rw-r--r--  1 root root u:object_r:system_file:s0  3440 2026-11-17 03:42 fuseMedia.bpf
+-rw-r--r--  1 root root u:object_r:system_file:s0  2896 2026-11-17 03:44 gpuMem.bpf
+-rw-r--r--  1 root root u:object_r:system_file:s0  5936 2026-11-17 03:25 gpuWork.bpf
+-rw-r--r--  1 root root u:object_r:system_file:s0  6168 2026-11-17 02:50 kernelWakelockDuration.bpf
+-rw-r--r--  1 root root u:object_r:system_file:s0  6232 2026-11-17 03:03 kernelWakelockDurationTest.bpf
+drwxr-xr-x  2 root root u:object_r:system_file:s0    60 2026-11-17 04:35 lock_contention
+drwxr-xr-x  2 root root u:object_r:system_file:s0    87 2026-11-17 04:35 memevents
+
+/system/etc/bpf/cputimeinstate:
+total 20
+drwxr-xr-x 2 root root u:object_r:system_file:s0     54 2026-11-17 04:35 .
+drwxr-xr-x 6 root root u:object_r:system_file:s0    299 2026-11-17 04:35 ..
+-rw-r--r-- 1 root root u:object_r:system_file:s0  27136 2026-11-17 02:54 timeInState.bpf
+
+/system/etc/bpf/dmabuf:
+total 20
+drwxr-xr-x 2 root root u:object_r:system_file:s0     53 2026-11-17 04:35 .
+drwxr-xr-x 6 root root u:object_r:system_file:s0    299 2026-11-17 04:35 ..
+-rw-r--r-- 1 root root u:object_r:system_file:s0  19136 2026-11-17 02:53 dmabufIter.bpf
+
+/system/etc/bpf/lock_contention:
+total 32
+drwxr-xr-x 2 root root u:object_r:system_file:s0     60 2026-11-17 04:35 .
+drwxr-xr-x 6 root root u:object_r:system_file:s0    299 2026-11-17 04:35 ..
+-rw-r--r-- 1 root root u:object_r:system_file:s0  41880 2026-11-17 02:50 bpfLockContention.bpf
+
+/system/etc/bpf/memevents:
+total 20
+drwxr-xr-x 2 root root u:object_r:system_file:s0     87 2026-11-17 04:35 .
+drwxr-xr-x 6 root root u:object_r:system_file:s0    299 2026-11-17 04:35 ..
+-rw-r--r-- 1 root root u:object_r:system_file:s0  10040 2026-11-17 03:28 bpfMemEvents.bpf
+-rw-r--r-- 1 root root u:object_r:system_file:s0  12064 2026-11-17 03:29 bpfMemEventsTest.bpf
+
+/vendor/etc/bpf:
+total 12
+drwxr-xr-x  2 root shell u:object_r:vendor_configs_file:s0    64 2026-11-17 05:11 .
+drwxr-xr-x 11 root shell u:object_r:vendor_configs_file:s0  1057 2026-11-17 05:11 ..
+-rw-r--r--  1 root root  u:object_r:vendor_configs_file:s0  6304 2026-11-17 03:52 filterPowerSupplyEvents.o

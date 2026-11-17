@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: Apache-2.0
+
+java_library {
+    name: "com.oneplus5t.keyhandler",
+    system_ext_specific: true,
+    installable: true,
+    platform_apis: true,
+    srcs: ["src/**/*.java"],
+}

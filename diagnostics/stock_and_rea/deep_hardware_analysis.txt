@@ -1,0 +1,429 @@
+=================================================================
+1. BASEBAND / MCFG CARRIER PROFILES & FIRMWARE INVENTORY
+=================================================================
+Total .mbn files in modem partition: 29
+  image/mba.mbn (230056 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/airtel/volte/mcfg_sw.mbn (67256 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/idea/commerci/mcfg_sw.mbn (67076 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/reliance/commerci/mcfg_sw.mbn (68456 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/vodafone/volte/india/mcfg_sw.mbn (66300 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/commerci/volte_op/mcfg_sw.mbn (64576 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/conf_vol/mcfg_sw.mbn (46580 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/nsiot_vo/mcfg_sw.mbn (46520 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/tgl_comb/mcfg_sw.mbn (22068 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/commerci/openmkt/mcfg_sw.mbn (78964 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/lab/cta/mcfg_sw.mbn (39552 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cu/commerci/volte/mcfg_sw.mbn (61084 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/common/row/commerci/mcfg_sw.mbn (64468 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/ee/commerci/mcfg_sw.mbn (66240 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/elisa/commerci/fi/mcfg_sw.mbn (68180 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/h3g/commerci/denmark/mcfg_sw.mbn (45472 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/h3g/commerci/uk/mcfg_sw.mbn (64428 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/telefoni/commerci/uk/mcfg_sw.mbn (64988 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/netherla/mcfg_sw.mbn (65604 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/volte/mcfg_sw.mbn (59740 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/na/tmo/commerci/mcfg_sw.mbn (60780 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/oem/lab/volte_pt/mcfg_sw.mbn (55356 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/oem/lab/volte_te/mcfg_sw.mbn (71848 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/oem/oversea/commerci/mcfg_sw.mbn (39108 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/oem/oversea/commerci/mtnl_bsn/mcfg_sw.mbn (65140 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/cht/commerci/mcfg_sw.mbn (64984 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/fareasto/commerci/mcfg_sw.mbn (64688 bytes)
+  image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/ytl/commerci/mcfg_sw.mbn (64292 bytes)
+  image/wlanmdsp.mbn (3388504 bytes)
+
+Modem ver_info.txt:
+{
+    "Image_Build_IDs": {
+        "adsp": "ADSP.HT.3.0-00387-CB8998-1", 
+        "apps": "LA.UM.8.4.r1-04700-8x98.0-1", 
+        "boot": "BOOT.XF.1.2.2.c1-00034-M8998LZB-2", 
+        "btfm": "BTFM.CHE.2.1.1-00300-QCACHROMZ-1", 
+        "common": "MSM8998.LA.1.1.c6-00017-STD.PROD-1.271073.1.277412.1", 
+        "cpev2": "CPE.TSF.2.0-00005-W9335AAAAAAAZQ-1", 
+        "glue": "GLUE.MSM8998_LA.2.0.1-00042-NOOP_TEST-1", 
+        "modem": "MPSS.AT.2.0.c4.7-00070-8998_GEN_PACK-2.271073.1.277412.1", 
+        "rpm": "RPM.BF.1.7-00128-M8998AAAAANAZR-1", 
+        "slpi": "SLPI.HB.2.0-00169-M8998AZL-1", 
+        "tz": "TZ.BF.4.0.6-00157-M8998AAAAANAZT-1.175038.2", 
+        "video": "VIDEO.VE.4.4-00043-PROD-1", 
+        "wapi": "WLAN_ADDON.HL.1.0-00020-CNSS_RMZ_WAPI-1", 
+        "wdsp": "WDSP.9340.1.0.c1-00008-W9340AAAAAAAZQ-1", 
+        "wgig": "WIGIG.SPR.5.2-00009-WIGIGSWZ-5", 
+        "wlan": "WLAN.HL.1.0.c6-00126-QCAHLSWMTPLZ-1.211883.1.278648.1"
+    }, 
+    "Metabuild_Info": {
+        "Meta_Build_ID": "MSM8998.LA.1.1.c6-00017-STD.PROD-1.271073.1.277412.1", 
+        "Product_Flavor": "asic", 
+        "Time_Stamp": "2020-10-29 21:14:55"
+    }, 
+    "Version": "1.0"
+}
+
+=================================================================
+2. QMI SERVICE IDS & SYMBOLS IN LIBQMISERVICES & LIBRIL-QC-HAL-QMI
+=================================================================
+Discovered 39 QMI Service Object getters in libqmiservices.so:
+  antswitch_get_service_object_internal_v01
+  at_get_service_object_internal_v01
+  atp_get_service_object_internal_v01
+  auth_get_service_object_internal_v01
+  blm_get_service_object_internal_v01
+  cat_get_service_object_internal_v02
+  coex_get_service_object_internal_v01
+  csvt_get_service_object_internal_v01
+  dfs_get_service_object_internal_v01
+  dms_get_service_object_internal_v01
+  dpm_get_service_object_internal_v01
+  dsd_get_service_object_internal_v01
+  ims_qmi_get_service_object_internal_v01
+  imsa_get_service_object_internal_v01
+  imsdcm_get_service_object_internal_v01
+  imsp_get_service_object_internal_v01
+  imsprivate_get_service_object_internal_v01
+  imsrtp_get_service_object_internal_v01
+  imss_get_service_object_internal_v01
+  imsvt_get_service_object_internal_v01
+  lowi_get_service_object_internal_v01
+  lte_get_service_object_internal_v01
+  nas_get_service_object_internal_v01
+  ott_get_service_object_internal_v01
+  pbm_get_service_object_internal_v01
+  pdc_get_service_object_internal_v01
+  qos_get_service_object_internal_v01
+  rfrpe_get_service_object_internal_v01
+  sar_get_service_object_internal_v01
+  sfs_get_service_object_internal_v01
+  ssctl_get_service_object_internal_v02
+  svs_get_service_object_internal_v01
+  uim_get_service_object_internal_v01
+  uim_http_get_service_object_internal_v01
+  uim_remote_get_service_object_internal_v01
+  voice_get_service_object_internal_v02
+  wda_get_service_object_internal_v01
+  wds_get_service_object_internal_v01
+  wms_get_service_object_internal_v01
+
+Key symbols in lib-imscmservice.so:
+  0000000000035008 D FeatureList
+  0000000000023524 T PostToConnection
+  00000000000233a0 T PostToService
+  00000000000232dc T _Z12signalCallerP13CM_Event_DataPKc
+  000000000002310c T _Z15create_and_lockP13CM_Event_DataPKc
+  00000000000231e0 T _Z16wait_and_destroyP13CM_Event_DataPKc
+  000000000002842c T _ZN11IMSCmDevice12SipQosStatusE24eSipQoSReservationStatus
+  000000000002c3e0 T _ZN11IMSCmDevice13IMSDevGetIMEIEv
+  000000000002c374 T _ZN11IMSCmDevice15GetSipLocalPortEv
+  00000000000290cc T _ZN11IMSCmDevice15NotifyCallStateE16QpCallCtrlCbTypeP16QpCallCtrlCbData
+  000000000002c40c T _ZN11IMSCmDevice15RcsConfigStatusEPc
+  00000000000292fc T _ZN11IMSCmDevice16GenericRegStatusE16GenericRegStatusPv
+  0000000000029280 T _ZN11IMSCmDevice16IMSDevAddServiceEPcj8eDCM_RAT
+  0000000000026040 T _ZN11IMSCmDevice16IMSDevInitializeEv
+  000000000002af60 T _ZN11IMSCmDevice16IMS_EventHandlerEP10IMSCmEvent
+  00000000000298c4 T _ZN11IMSCmDevice16ServiceAvailableE16eQpServiceStatusPct
+  000000000002a618 T _ZN11IMSCmDevice17IMSDevAddListenerEP17IMSDeviceListener
+  000000000002a60c T _ZN11IMSCmDevice17IMSDeviceRegTimerEijPv
+  00000000000266ec T _ZN11IMSCmDevice18IMSDevUninitializeEv
+  0000000000028434 T _ZN11IMSCmDevice18RegistrationStatusE21eQpRegistrationStatus
+  000000000002a36c T _ZN11IMSCmDevice18ServiceUnAvailableE22eQpRegistrationFailuretPct
+  0000000000026f84 T _ZN11IMSCmDevice19HandleLteVOPSChangeE12eDCMCallType
+  00000000000296d0 T _ZN11IMSCmDevice19IMSDevReAddServicesEv
+  00000000000291d8 T _ZN11IMSCmDevice19IMSDevRemoveServiceEPcj
+  00000000000274e0 T _ZN11IMSCmDevice19imsDevSetAccessTypeE8eDCM_RAT
+  000000000002a1e8 T _ZN11IMSCmDevice19IMSDevUpdateServiceEPc25IMS_DEVICE_REG_PROC_STATE
+  000000000002701c T _ZN11IMSCmDevice20HandleDataDSrvStatusE8eDCM_MSG
+  000000000002b384 T _ZN11IMSCmDevice20imsDevGetEnablerTypeEPKc
+  0000000000028904 T _ZN11IMSCmDevice20IMSDeviceDcmCallbackE8eDCM_MSGP12QpDcmProfilePv
+  000000000002a958 T _ZN11IMSCmDevice20imsDevIsPDPConnectedEv
+  0000000000027570 T _ZN11IMSCmDevice20imsDevNotifyListenerEPK14IMS_DEVICE_EVTP17IMSDeviceListener
+  000000000002aaac T _ZN11IMSCmDevice20IMSDevRemoveListenerEP17IMSDeviceListener
+  0000000000029f1c T _ZN11IMSCmDevice20ServiceAvailableWLANE16eQpServiceStatusPct
+  0000000000026aac T _ZN11IMSCmDevice21HandleRatNotificationEP14QpDcmRatParams
+  000000000002b008 T _ZN11IMSCmDevice21IMSDevGetPdpIDFromRATE8eDCM_RAT
+  0000000000028f04 T _ZN11IMSCmDevice21imsDevLPMNotificationE8OprtMode
+  000000000002782c T _ZN11IMSCmDevice22imsDevAddRemoveServiceEPcji8eDCM_RAT
+  000000000002a008 T _ZN11IMSCmDevice22ServiceUnAvailableWLANE22eQpRegistrationFailuretPct
+  0000000000028e08 T _ZN11IMSCmDevice23IMSDeviceRatChangeEventE8eDCM_RAT
+  0000000000026314 T _ZN11IMSCmDevice24IMSDevGenericDcmCallbackE8eDCM_MSGPvS1_
+
+Strings in libril-qc-hal-qmi.so matching QMI / RIL / IMS / NV / OnePlus:
+
+  Pattern 'qcril_qmi_' (2788 unique matches, showing top 25):
+    QCRIL_QMI_CLIENT
+    QCRIL_QMI_PDC
+    QCRIL_QMI_RADIO_CONFIG_CLIENT_PROVISIONING_ENABLE_PRESENCE
+    QCRIL_QMI_RADIO_CONFIG_CLIENT_PROVISIONING_ENABLE_RTT
+    QCRIL_QMI_RADIO_CONFIG_CLIENT_PROVISIONING_ENABLE_VOLTE
+    QCRIL_QMI_RADIO_CONFIG_CLIENT_PROVISIONING_ENABLE_VOWIFI
+    QCRIL_QMI_RADIO_CONFIG_CLIENT_PROVISIONING_ENABLE_VT
+    QCRIL_QMI_RADIO_CONFIG_CLIENT_PROVISIONING_WIFI_CALL
+    QCRIL_QMI_RADIO_CONFIG_CLIENT_PROVISIONING_WIFI_CALL_PREFERENCE
+    QCRIL_QMI_RADIO_CONFIG_CLIENT_PROVISIONING_WIFI_CALL_ROAMING
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_1X_THRESHOLD
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_LTE_THRESHOLD1
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_LTE_THRESHOLD2
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_LTE_THRESHOLD3
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_WIFI_THRESHOLDA
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_WIFI_THRESHOLDB
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_WLAN_TO_1X_HYS_TIMER
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_WLAN_TO_WWAN_HYS_TIMER
+    QCRIL_QMI_RADIO_CONFIG_HANDOVER_CONFIG_WWAN_TO_WLAN_HYS_TIMER
+    QCRIL_QMI_RADIO_CONFIG_IMS_SERVICE_ENABLE_MOBILE_DATA_ENABLED
+    QCRIL_QMI_RADIO_CONFIG_PRESENCE_AVAILABILITY_CACHE_EXPIRATION
+    QCRIL_QMI_RADIO_CONFIG_PRESENCE_CAPABILITIES_CACHE_EXPIRATION
+    QCRIL_QMI_RADIO_CONFIG_PRESENCE_CAPABILITY_DISCOVERY_ENABLE
+    QCRIL_QMI_RADIO_CONFIG_PRESENCE_CAPABILITY_POLL_INTERVAL
+    QCRIL_QMI_RADIO_CONFIG_PRESENCE_CAPABILITY_POLL_LIST_SUBSCRIPTION_EXPIRY_TIMER
+
+  Pattern 'QMI_RIL_' (402 unique matches, showing top 25):
+    QCRIL_EVT_QMI_RIL_ASSESS_EMRGENCY_NUMBER_LIST_DESIGNATED_COUNTRY
+    QCRIL_EVT_QMI_RIL_CELL_INFO_LIST_CHANGED_IND
+    QCRIL_EVT_QMI_RIL_CONNECTED_EMEGENCY_CALL_END
+    QCRIL_EVT_QMI_RIL_EMBMS_ENABLE_DATA_REQ
+    QCRIL_EVT_QMI_RIL_EMBMS_SEND_UNSOL_RADIO_STATE
+    QCRIL_EVT_QMI_RIL_ENFORCE_DEFERRED_MODE_PREF_SET
+    QCRIL_EVT_QMI_RIL_MODEM_RESTART_CHECK_IF_SERVICE_UP
+    QCRIL_EVT_QMI_RIL_MODEM_RESTART_RIL_CORE_FINAL_RESUME_CON
+    QCRIL_EVT_QMI_RIL_MODEM_RESTART_RIL_CORE_FINAL_RESUME_REQ
+    QCRIL_EVT_QMI_RIL_MODEM_RESTART_RIL_CORE_FINAL_SUSPEND_CON
+    QCRIL_EVT_QMI_RIL_MODEM_RESTART_RIL_CORE_FINAL_SUSPEND_REQ
+    QCRIL_EVT_QMI_RIL_MODEM_RESTART_RIL_CORE_PRE_RESUME_CON
+    QCRIL_EVT_QMI_RIL_MODEM_RESTART_RIL_CORE_PRE_RESUME_REQ
+    QCRIL_EVT_QMI_RIL_OEM_HOOK_QMI_TUNNELING_SERVICE_VT
+    QCRIL_EVT_QMI_RIL_PDC_DEACTIVATE_CONFIGURATION
+    QCRIL_EVT_QMI_RIL_PDC_DELETE_ALL
+    QCRIL_EVT_QMI_RIL_PDC_LIST_CONFIGURATION
+    QCRIL_EVT_QMI_RIL_PDC_LOAD_CONFIGURATION
+    QCRIL_EVT_QMI_RIL_PDC_PARSE_DIFF_RESULT
+    QCRIL_EVT_QMI_RIL_PDC_SELECT_CONFIGURATION
+    QCRIL_EVT_QMI_RIL_POLL_CELL_INFO_LIST
+    QCRIL_EVT_QMI_RIL_POST_OPRT_ONLINE_ACTION
+    QCRIL_EVT_QMI_RIL_POST_VOICE_RTE_CHANGE_IND
+    QCRIL_EVT_QMI_RIL_SEND_UNSOL_RADIO_STATE_CHANGED
+    QCRIL_EVT_QMI_RIL_SERVICE_DOWN
+
+  Pattern 'persist\.vendor\.radio' (140 unique matches, showing top 25):
+    persist.vendor.radio.0x9e_not_callname
+    persist.vendor.radio.1x_roam_mtu_size
+    persist.vendor.radio.3gpp_drte_ltd
+    persist.vendor.radio.5g_mode_pref
+    persist.vendor.radio.5g_mode_pref_
+    persist.vendor.radio.adb_log_on
+    persist.vendor.radio.add_power_save
+    persist.vendor.radio.always_send_plmn
+    persist.vendor.radio.apm_mdm_not_pwdn
+    persist.vendor.radio.apm_sim_not_pwdn
+    persist.vendor.radio.attach.profile
+    persist.vendor.radio.autoanswer.ms
+    persist.vendor.radio.bar_fake_gcell
+    persist.vendor.radio.block_allow_data
+    persist.vendor.radio.block_sms_on_1x
+    persist.vendor.radio.call_type
+    persist.vendor.radio.cinfo_sweep_limit
+    persist.vendor.radio.clir
+    persist.vendor.radio.cn_mcc
+    persist.vendor.radio.cs_srv_type
+    persist.vendor.radio.csg_info_avlbl
+    persist.vendor.radio.custom_ecc
+    persist.vendor.radio.custom_nw_ecc
+    persist.vendor.radio.data_con_rprt
+    persist.vendor.radio.data_ltd_sys_ind
+
+  Pattern 'oem_hook' (49 unique matches, showing top 25):
+    OEM_HOOK_RAW
+    OEM_HOOK_STRINGS
+    QCRIL_EVT_QMI_RIL_OEM_HOOK_QMI_TUNNELING_SERVICE_VT
+    QCRIL_EVT_RIL_REQUEST_OEM_HOOK_RAW
+    QCRIL_EVT_RIL_REQUEST_OEM_HOOK_STRINGS
+    QCRIL_EVT_RIL_UNSOL_OEM_HOOK_RAW
+    QCRIL_GRP_OEM_HOOK
+    RIL_UNSOL_OEM_HOOK_RAW
+    UNSOL_OEM_HOOK_RAW
+    [%s: %d] [%s(%ld,%ld)] %s: qmi_ril_oem_hook_get_request_id() returned %d
+    _Z29qmi_ril_parse_oem_hook_headerPhP37qmi_ril_oem_hook_request_details_type
+    _Z31qmi_ril_oem_hook_get_request_idttPjPPKc
+    _Z35qmi_ril_parse_oem_req_proto_messageP37qmi_ril_oem_hook_request_details_typeP9RIL_ErrnoP25qcril_request_params_type
+    _Z36qmi_ril_get_req_details_from_oem_reqP37qmi_ril_oem_hook_request_details_typeP9RIL_ErrnoPhP25qcril_request_params_typem
+    _Z37qmi_ril_abandon_all_oem_hook_requests9RIL_Errno
+    _Z37qmi_ril_parse_oem_req_lte_direct_discP37qmi_ril_oem_hook_request_details_typeP9RIL_ErrnoP25qcril_request_params_type
+    _Z39qmi_ril_parse_oem_req_tunnelled_messageP37qmi_ril_oem_hook_request_details_typeP9RIL_ErrnoP25qcril_request_params_type
+    _Z50qcril_qmi_nas_oem_hook_set_atel_ui_status_to_modemPK25qcril_request_params_typeP25qcril_request_return_type
+    _Z51qcril_qmi_nas_csg_handle_oem_hook_set_sys_selectionPK25qcril_request_params_typeP25qcril_request_return_type
+    _Z51qcril_qmi_send_ss_failure_cause_oem_hook_unsol_resp24qmi_sups_errors_enum_v02h
+    _Z54qcril_other_request_oem_hook_neighboring_cells_info_cbjNSt3__110shared_ptrIvEEjPvi
+    _Z54qcril_qmi_nas_csg_handle_oem_hook_perform_network_scanPK25qcril_request_params_typeP25qcril_request_return_type
+    com.qualcomm.qti.qcril.legacy.event.QMI_RIL_OEM_HOOK_QMI_TUNNELING_SERVICE_VT
+    com.qualcomm.qti.qcril.legacy.event.RIL_REQUEST_OEM_HOOK_RAW
+    com.qualcomm.qti.qcril.legacy.event.RIL_REQUEST_OEM_HOOK_STRINGS
+
+  Pattern 'ims_' (372 unique matches, showing top 25):
+    $$$$$$ %sims_subscription_app_index = %d
+    (RIL_IMS_SMS_Message*)Payload->
+    CALL_FAIL_RETRY_ON_IMS_WITHOUT_RTT
+    CONFIG_IMS_NOT_READY
+    E_IMS_DEREGISTERED
+    IMS_ANSWER
+    IMS_ANSWER_FAIL
+    IMS_DEREGISTERED
+    IMS_HANDOVER
+    IMS_REGISTRATION_STATE
+    IMS_SEND_SMS
+    IMS_SRV_CHANGED
+    QCRIL_EVT_HOOK_IMS_ENABLER_STATE_REQ
+    QCRIL_EVT_HOOK_IMS_ENABLER_STATUS_IND
+    QCRIL_EVT_HOOK_IMS_GET_EVENT_REPORT_REQ_V01
+    QCRIL_EVT_HOOK_IMS_GET_NOTIFY_FMT_REQ_V01
+    QCRIL_EVT_HOOK_IMS_NOTIFY_IND_V01
+    QCRIL_EVT_HOOK_IMS_NOTIFY_XML_IND_V01
+    QCRIL_EVT_HOOK_IMS_PUBLISH_TRIGGER_IND_V01
+    QCRIL_EVT_HOOK_IMS_SEND_PUBLISH_REQ
+    QCRIL_EVT_HOOK_IMS_SEND_PUBLISH_XML_REQ
+    QCRIL_EVT_HOOK_IMS_SEND_SUBSCRIBE_REQ
+    QCRIL_EVT_HOOK_IMS_SEND_SUBSCRIBE_XML_REQ
+    QCRIL_EVT_HOOK_IMS_SEND_UNPUBLISH_REQ
+    QCRIL_EVT_HOOK_IMS_SEND_UNSUBSCRIBE_REQ
+
+  Pattern 'mcfg' (17 unique matches, showing top 25):
+    /data/vendor/modem_config/mcfg_hw/
+    /data/vendor/modem_config/mcfg_sw/
+    MCFG_IIN
+    MCFG_LONG_IIN
+    MCFG_VERSION_CARRIER
+    MCFG_VERSION_FAMILY
+    MCFG_VERSION_MINOR
+    MCFG_VERSION_OEM
+    create table if not exists %s (FILE TEXT , MCFG_IIN TEXT, MCFG_LONG_IIN TEXT, VOLTE_INFO TEXT, MKT_INFO TEXT, LAB_INFO TEXT, PRIMARY KEY(FILE, MCFG_IIN, MCFG_LONG_IIN))
+    create table if not exists %s (FILE TEXT PRIMARY KEY, MCFG_VERSION_FAMILY INTEGER, MCFG_VERSION_OEM INTEGER, MCFG_VERSION_CARRIER INTEGER, MCFG_VERSION_MINOR INTEGER, CARRIER_NAME TEXT, QC_VERSION_FAMILY INTEGER, QC_VERSION_OEM INTEGER, QC_VERSION_CARRIER INTEGER, QC_VERSION_MINOR INTEGER, CONFIG_ID TEXT)
+    create table if not exists %s (FILE TEXT PRIMARY KEY, MCFG_VERSION_FAMILY INTEGER, MCFG_VERSION_OEM INTEGER, MCFG_VERSION_CARRIER INTEGER, MCFG_VERSION_MINOR INTEGER, HW_NAME TEXT, QC_VERSION_FAMILY INTEGER, QC_VERSION_OEM INTEGER, QC_VERSION_CARRIER INTEGER, QC_VERSION_MINOR INTEGER, SHORT_NAME TEXT, CONFIG_ID TEXT)
+    insert into %s(FILE, MCFG_IIN, VOLTE_INFO, MKT_INFO, LAB_INFO) values('%s', '%s', '%s', '%s', '%s')
+    insert into %s(FILE, MCFG_LONG_IIN, VOLTE_INFO, MKT_INFO, LAB_INFO) values('%s', '%s', '%s', '%s', '%s')
+    mcfg_get_config_info
+    mcfg_get_oem_version
+    mcfg_get_qc_version
+    mcfg_get_tr_tlv
+
+  Pattern 'dsds' (149 unique matches, showing top 25):
+    DsdServiceReady=
+    DsdSystemStatusFragmentMessage
+    DsdSystemStatusMessage
+    DsdSystemStatusPerApnMessage
+    GetDsdSystemStatusMessage
+    [%s: %d] [%s(%ld,%ld)] %s:  .. dsds 2nd qmi_nas client bind res %d
+    [%s: %d] [%s(%ld,%ld)] %s:  card absent DSDS check: dsds status valid %d, dsds act_status %d, dsds is active %d/%d
+    [%s: %d] [%s(%ld,%ld)] %s: !QMI RIL! 2nd phase init for NON - DSDS
+    [%s: %d] [%s(%ld,%ld)] %s: DDS change triggered because of MMS in DSDS.. res %d
+    [%s: %d] [%s(%ld,%ld)] %s: QMI RIL! SMS init right away for both Non DSDS or DSDS
+    [%s: %d] [%s(%ld,%ld)] %s: [MSIM] .. is active subs %d / %d, was active %d / %d, oprt %d / %d, dsds valid %d, act_status %d, card status %d, card ever present %d
+    [%s: %d] [%s(%ld,%ld)] %s: dsds_is_tune_away = %d, priority_paging = %d, dsds_is_lte_tune_away = %d
+    [%s: %d] [%s(%ld,%ld)] %s: nas_common_info.dsds.is_default_data_set: %d
+    [ApAssistNetworkServiceHandler]: processQmiDsdSystemStatusInd
+    [CallManager]: processQmiDsdSystemStatusInd
+    [DSDModemEndPoint::generateDsdSystemStatusInd] Failed to get system status
+    [DSDModemEndPoint::generateDsdSystemStatusInd]Failed to send message GetDsdSystemStatusMessage
+    [DSDModemEndPoint::generateDsdSystemStatusInd]dispatching message GetDsdSystemStatusMessage
+    [DSDModemEndPointModule::handleGetDsdSystemStatusV2] Begin transaction tx=
+    [DSDModemEndPointModule::handleGetDsdSystemStatusV2] invalid transaction id
+    [DSDModemEndPointModule] processDsdSystemStatusResultComplete Failed to send QMI_DSD_GET_UI_INFO_REQ_V01 for retry
+    [DSDModemEndPointModule]: handleGetDsdSystemStatusV1 ENTRY
+    [DSDModemEndPointModule]: handleGetDsdSystemStatusV2 ENTRY
+    [DSDModemEndPointModule]: processDsdSystemStatusIndComplete broadcasting sys status v2
+    [DSDModemEndPointModule]: processDsdSystemStatusResultComplete reqMsg is null
+
+=================================================================
+3. SLPI SENSORS & PERSIST CALIBRATION REGISTRY ANALYSIS
+=================================================================
+  [sensors.ssc.so]  Calibration Lib
+  [sensors.ssc.so]  Uncalibrated
+  [sensors.ssc.so] %s: Accel, DTy: %d
+  [sensors.ssc.so] %s: Calibrated Mag, %f, %f, %f
+  [sensors.ssc.so] %s: Error getting localtime
+  [sensors.ssc.so] %s: GEO MAG RV: [0]: %f [1]: %f [2]: %f acc: %d SAM TS: %u HAL TS:% ld elapsedRealtimeNano:%ld
+  [sensors.ssc.so] %s: GEOMAGNETIC_RV disabled!
+  [sensors.ssc.so] %s: GEOMAGNETIC_RV enabled handle:%d
+  [sensors.ssc.so] %s: GYRO DTy: %d
+  [sensors.ssc.so] %s: GYRO disabled!
+  [sensors.ssc.so] %s: GYRO enabled handle:%d
+  [sensors.ssc.so] %s: Handle %d does not have an SUID for direct report
+  [sensors.ssc.so] %s: Light DTy: %d
+  [sensors.ssc.so] %s: Linear Accel disabled!
+  [sensors.ssc.so] %s: Linear Accel enabled handle:%d
+  [sensors.ssc.so] %s: LinearAcceleration: X: %f Y: %f Z: %f acc: %d SAM TS: %u HAL TS:%ld elapsedRealtimeNano:%ld
+  [sensors.ssc.so] %s: MAG DTy: %d
+  [sensors.ssc.so] %s: MAG Unknown report ID
+  [sensors.ssc.so] %s: Magnetic sensor events with invalid length
+  [sensors.ssc.so] %s: Prox DTy: %d
+  [sensors.ssc.so] %s: Proximity disabled!
+  [sensors.ssc.so] %s: Proximity enabled handle:%d
+  [sensors.ssc.so] %s: Proximity through Thresh Algo handle:%d
+  [sensors.ssc.so] %s: Proximity through Thresh algo disabled!
+  [sensors.ssc.so] %s: Proximity through Thresh algo will be enabled                                with handle :%d
+  [sensors.ssc.so] %s: Received SNS_SAM_AMD_CANCEL/DISABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_AMD_ENABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_AMD_GET_ATTRIBUTES_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_BASIC_GESTURES_CANCEL_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_BASIC_GESTURES_ENABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_BASIC_GESTURES_GET_ATTRIBUTES_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_BTE_CANCEL_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_BTE_ENABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_BTE_GET_ATTRIBUTES_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_CMC_CANCEL_RESP_V02
+  [sensors.ssc.so] %s: Received SNS_SAM_CMC_ENABLE_RESP_V02
+  [sensors.ssc.so] %s: Received SNS_SAM_CMC_GET_ATTRIBUTES_RESP_V02
+  [sensors.ssc.so] %s: Received SNS_SAM_DEV_ORI_CANCEL/DISABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_DEV_ORI_ENABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_DEV_ORI_GET_ATTRIBUTES_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_DEV_ORI_GET_REPORT_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_DEV_ORI_VERSION_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_DPC_DISABLE/CANCEL_RESP_V02
+  [sensors.ssc.so] %s: Received SNS_SAM_DPC_ENABLE_RESP_V02
+  [sensors.ssc.so] %s: Received SNS_SAM_DPC_GET_ATTRIBUTES_RESP_V02
+  [sensors.ssc.so] %s: Received SNS_SAM_EVENT_GATED_SENSOR_CANCEL_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_EVENT_GATED_SENSOR_ENABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_EVENT_GATED_SENSOR_GET_ATTRIBUTES_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_FACING_CANCEL_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_FACING_ENABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_FACING_GET_ATTRIBUTES_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_FAST_AMD_CANCEL/DISABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_FAST_AMD_ENABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_FAST_AMD_GET_ATTRIBUTES_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_GAME_ROTATION_VECTOR_BATCH_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_GAME_ROTATION_VECTOR_CANCEL/DISABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_GAME_ROTATION_VECTOR_ENABLE_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_GAME_ROTATION_VECTOR_GET_ATTRIBUTES_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_GRAVITY_BATCH_RESP_V01
+  [sensors.ssc.so] %s: Received SNS_SAM_GRAVITY_CANCEL/DISABLE_RESP_V01
+
+Persist Sensor Registry files (/home/zero/oneplus5t-android17/firmware/extracted/persist/sensors/registry/registry):
+
+=================================================================
+4. CAMERA SUBSYSTEM (SENSORS, ACTUATORS, OIS, EEPROM, CHROMATIX)
+=================================================================
+Total vendor camera modules found: 84
+  lib/libmmcamera_eeprom_util.so (40912B)
+    -> ['mesh_rolloff_V4_ScaleOTPMesh_to_10x13', 'mesh_rolloff_V4_ScaleOTPMesh_to_10x13', 'imx398_gt24c64', '<SENSOR>< HIGH> %s: %d: REF_CRC 0x%x CALC CRC 0x%x CALC Reverse CRC 0x%x matches? %d']
+  lib/libmmcamera_imx350.so (818956B)
+    -> ['libmmcamera_imx350.so', 'imx350_pdaf_calculate_defocus', 'mm-camera-imx350', 'imx350', 'imx350_pdaf_calculate_defocus', 'libSonyIMX350PdafLibrary.so']
+  lib/libmmcamera_imx350_gt24c64ass_eeprom.so (40608B)
+    -> ['libmmcamera_imx350_gt24c64ass_eeprom.so', 'imx350_gt24c64ass_eeprom_format_calibration_data', 'imx350_gt24c64ass_eeprom_format_lensshading', 'imx350_gt24c64ass_eeprom_get_calibration_items', 'imx350_gt24c64ass_eeprom_open_lib', 'imx350_gt24c64ass_get_raw_data', 'imx350_gt24c64ass_eeprom', 'imx350_gt24c64ass_eeprom_format_afdata']
+  lib/libmmcamera_imx371.so (810580B)
+    -> ['libmmcamera_imx371.so', 'imx371_calculate_exposure', 'imx371_fill_exposure_array', 'imx371']
+  lib/libmmcamera_imx376k.so (810576B)
+    -> ['libmmcamera_imx376k.so', 'imx376k_calculate_exposure', 'imx376k_fill_exposure_array', 'imx376k']
+  lib/libmmcamera_imx376k_gt24c64_eeprom.so (40604B)
+    -> ['libmmcamera_imx376k_gt24c64_eeprom.so', 'imx376k_gt24c64_eeprom_format_calibration_data', 'imx376k_gt24c64_eeprom_format_lensshading', 'imx376k_gt24c64_eeprom_get_calibration_items', 'imx376k_gt24c64_eeprom_open_lib', 'imx376k_gt24c64_get_raw_data', 'imx376k_gt24c64_eeprom_format_afdata', 'imx376k_gt24c64_eeprom']
+  lib/libmmcamera_imx398.so (814764B)
+    -> ['libmmcamera_imx398.so', 'imx398']
+  lib/libmmcamera_imx398_gt24c64_eeprom.so (40652B)
+    -> ['libmmcamera_imx398_gt24c64_eeprom.so', 'imx398_gt24c64_eeprom_format_calibration_data', 'imx398_gt24c64_eeprom_format_lensshading', 'imx398_gt24c64_eeprom_get_calibration_items', 'imx398_gt24c64_eeprom_open_lib', 'imx398_gt24c64_get_raw_data', 'imx398_gt24c64_eeprom']
+  lib/libmmcamera_isp_fovcrop_encoder46.so (49628B)
+  lib/libmmcamera_isp_fovcrop_video46.so (49628B)
+  lib/libmmcamera_isp_fovcrop_viewfinder46.so (49628B)
+  lib/libmmcamera_isp_pdaf48.so (32936B)
+  lib/libmmcamera_pdaf.so (86976B)
+    -> ['0XqX*h', '0Xr^A']
+  lib/libmmcamera_pdafcamif.so (82876B)
+    -> [' 0X@', 'x 0X', '| 0X', '0Xr^A']
+  lib/libmmcamera_s5k3p8sp_m24c64s_eeprom.so (40616B)
+    -> ['%s: Sensor ID:0x%x  is_wbc:%d is_lsc:%d']
+  lib/libmmcamera_sony_imx371_eeprom.so (40604B)
+    -> ['libmmcamera_sony_imx371_eeprom.so', 'sony_imx371_eeprom_format_calibration_data', 'sony_imx371_eeprom_get_calibration_items', 'sony_imx371_eeprom_open_lib', 'sony_imx371_eeprom_format_lscdata', 'sony_imx371_eeprom_format_wbdata', 'sony_imx371_eeprom_format_calibration_data', 'sony_imx371_eeprom_get_crosstalk_data', 'sony_imx371_eeprom_is_awb_cal_valid', 'sony_imx371_eeprom_is_lsc_valid', 'sony_imx371_eeprom_is_awb_valid']

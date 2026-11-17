@@ -1,0 +1,302 @@
+grep: /vendor/etc/init/hw: Is a directory
+/system/etc/init/atrace.rc:## Permissions to allow system-wide tracing to the kernel trace buffer.
+/system/etc/init/atrace.rc:# Allow writing to the kernel trace log.
+/system/etc/init/atrace.rc:    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+/system/etc/init/atrace.rc:    chmod 0222 /sys/kernel/tracing/trace_marker
+/system/etc/init/atrace.rc:# Scheduler tracepoints require schedstats=enable
+/system/etc/init/atrace.rc:# Grant unix world read/write permissions to kernel tracepoints.
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/trace_clock
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/trace_clock
+/system/etc/init/atrace.rc:# Read and truncate the kernel trace.
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/trace
+/system/etc/init/atrace.rc:# Read and truncate the per-CPU kernel trace.
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu0/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu0/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu1/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu1/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu2/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu2/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu3/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu3/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu4/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu4/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu5/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu5/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu6/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu6/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu7/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu7/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu8/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu8/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu9/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu9/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu10/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu10/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu11/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu11/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu12/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu12/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu13/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu13/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu14/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu14/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu15/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu15/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu16/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu16/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu17/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu17/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu18/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu18/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu19/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu19/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu20/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu20/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu21/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu21/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu22/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu22/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/debug/tracing/per_cpu/cpu23/trace
+/system/etc/init/atrace.rc:    chmod 0666 /sys/kernel/tracing/per_cpu/cpu23/trace
+/system/etc/init/atrace.rc:    copy /system/etc/ftrace_synthetic_events.conf /sys/kernel/tracing/synthetic_events
+/system/etc/init/atrace.rc:    copy /system/etc/ftrace_synthetic_events.conf /sys/kernel/debug/tracing/synthetic_events
+/system/etc/init/atrace.rc:on late-init && property:ro.boot.fastboot.boottrace=
+/system/etc/init/atrace.rc:# Hypervisor tracing instance doesn't support changing trace_clock
+/system/etc/init/atrace.rc:    chmod 0440 /sys/kernel/debug/tracing/hyp/trace_clock
+/system/etc/init/atrace.rc:    chmod 0440 /sys/kernel/tracing/hyp/trace_clock
+/system/etc/init/atrace.rc:    chmod 0440 /sys/kernel/debug/tracing/hypervisor/trace_clock
+/system/etc/init/atrace.rc:    chmod 0440 /sys/kernel/tracing/hypervisor/trace_clock
+/system/etc/init/atrace.rc:# Read and truncate the hyp trace.
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/trace
+/system/etc/init/atrace.rc:# Read and truncate the per-CPU kernel trace.
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu0/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu0/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu0/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu0/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu1/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu1/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu1/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu1/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu2/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu2/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu2/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu2/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu3/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu3/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu3/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu3/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu4/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu4/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu4/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu4/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu5/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu5/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu5/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu5/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu6/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu6/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu6/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu6/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu7/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu7/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu7/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu7/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu8/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu8/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu8/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu8/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu9/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu9/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu9/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu9/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu10/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu10/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu10/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu10/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu11/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu11/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu11/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu11/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu12/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu12/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu12/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu12/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu13/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu13/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu13/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu13/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu14/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu14/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu14/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu14/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu15/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu15/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu15/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu15/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu16/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu16/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu16/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu16/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu17/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu17/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu17/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu17/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu18/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu18/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu18/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu18/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu19/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu19/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu19/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu19/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu20/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu20/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu20/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu20/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu21/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu21/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu21/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu21/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu22/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu22/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu22/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu22/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hyp/per_cpu/cpu23/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hyp/per_cpu/cpu23/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/debug/tracing/hypervisor/per_cpu/cpu23/trace
+/system/etc/init/atrace.rc:    chmod 0660 /sys/kernel/tracing/hypervisor/per_cpu/cpu23/trace
+/system/etc/init/atrace.rc:on property:persist.debug.atrace.boottrace=1
+/system/etc/init/atrace.rc:    start boottrace
+/system/etc/init/atrace.rc:# Run atrace with the categories written in a file
+/system/etc/init/atrace.rc:service boottrace /system/bin/atrace --async_start -f /data/misc/boottrace/categories
+/system/etc/init/atrace_userdebug.rc:## Permissions to allow additional system-wide tracing to the kernel trace buffer.
+/system/etc/init/atrace_userdebug.rc:## The default list of permissions is set in frameworks/native/cmds/atrace/atrace.rc
+/system/etc/init/atrace_userdebug.rc:# Grant unix world read/write permissions to enable kernel tracepoints.
+/system/etc/init/atrace_userdebug.rc:    # Allow traced_probes to use the raw_syscall filters to trace only a subset
+/system/etc/init/atrace_userdebug.rc:    # Allow traced_probes to use the kprobe interface
+/system/etc/init/gpuservice.rc:    group graphics readtracefs
+/system/etc/init/heapprofd.rc:on property:traced.lazy.heapprofd=1
+/system/etc/init/heapprofd.rc:on property:persist.heapprofd.enable="" && property:traced.lazy.heapprofd=""
+grep: /system/etc/init/hw: Is a directory
+/system/etc/init/incidentd.rc:    capabilities KILL SYS_PTRACE
+/system/etc/init/init-perfetto.rc:on load-bpf-programs
+/system/etc/init/netbpfload.rc:# - This is parsed in BpfUtils.h which ignores year/quarter:
+/system/etc/init/netbpfload.rc:# - There's some extra sanity checking in NetBpfLoad.cpp,
+/system/etc/init/netbpfload.rc:# It is important that we start bpfloader after:
+/system/etc/init/netbpfload.rc:#   - /sys/fs/bpf is already mounted,
+/system/etc/init/netbpfload.rc:#   - apex (incl. rollback) is initialized (so that we can load bpf
+/system/etc/init/netbpfload.rc:on load-bpf-programs
+/system/etc/init/netbpfload.rc:    # Temporarily relax access to kallsyms so that bpfloader can resolve kernel symbols
+/system/etc/init/netbpfload.rc:    # 'exec_start' is synchronous, a successful bpfloader invocation will
+/system/etc/init/netbpfload.rc:    # result in 'bpf.progs_loaded' property being set to '1'.
+/system/etc/init/netbpfload.rc:    exec_start bpfloader
+/system/etc/init/netbpfload.rc:    # Wait for bpf programs to be loaded before proceeding.
+/system/etc/init/netbpfload.rc:    # (this will hang if bpfloader fails)
+/system/etc/init/netbpfload.rc:    wait_for_prop bpf.progs_loaded 1
+/system/etc/init/netbpfload.rc:    # Restore kallsyms protection after bpf programs have been loaded.
+/system/etc/init/netbpfload.rc:    # This has to happen after bpfloader has already terminated.
+/system/etc/init/netbpfload.rc:    # At this point 'bpf.progs_loaded' is guaranteed to be '1'
+/system/etc/init/netbpfload.rc:# Note: This will actually execute /apex/com.android.tethering/bin/netbpfload
+/system/etc/init/netbpfload.rc:# by virtue of 'service bpfloader' being overridden by the apex shipped .rc
+/system/etc/init/netbpfload.rc:service bpfloader /system/bin/false
+/system/etc/init/netbpfload.rc:    reboot_on_failure reboot,netbpfload-missing
+/system/etc/init/netd.rc:    disabled # only started once bpf programs are loaded
+/system/etc/init/netd.rc:    disabled # only started once bpf programs are loaded
+/system/etc/init/netd.rc:    # apparently some older kernels do not honour CAP_IPC_LOCK for eBPF map allocation
+/system/etc/init/perfetto.rc:service traced /system/bin/traced
+/system/etc/init/perfetto.rc:    socket traced_consumer stream 0666 root root
+/system/etc/init/perfetto.rc:    socket traced_producer stream 0666 root root
+/system/etc/init/perfetto.rc:# traced_relay relays its local producer's data to a central traced service
+/system/etc/init/perfetto.rc:# running in a different VM or in the host. traced and traced_relay are mutually
+/system/etc/init/perfetto.rc:# * The relay socket name is specified by the |traced_relay.relay_port|
+/system/etc/init/perfetto.rc:service traced_relay /system/bin/traced_relay
+/system/etc/init/perfetto.rc:    socket traced_producer stream 0666 root root
+/system/etc/init/perfetto.rc:service traced_probes /system/bin/traced_probes
+/system/etc/init/perfetto.rc:    # Despite the "log" group below, traced_probes is allowed to read log
+/system/etc/init/perfetto.rc:    # only on userdebug/eng via selinux (see traced_probes.te).
+/system/etc/init/perfetto.rc:    group nobody readproc log readtracefs
+/system/etc/init/perfetto.rc:    # Clean up procfs configuration even if traced_probes crashes
+/system/etc/init/perfetto.rc:    onrestart exec_background - nobody shell -- /system/bin/traced_probes --cleanup-after-crash
+/system/etc/init/perfetto.rc:on property:persist.device_config.global_settings.sys_traced=1
+/system/etc/init/perfetto.rc:    setprop persist.traced.enable 1
+/system/etc/init/perfetto.rc:on property:persist.device_config.global_settings.sys_traced=0
+/system/etc/init/perfetto.rc:    setprop persist.traced.enable 0
+/system/etc/init/perfetto.rc:on property:debug.atrace.user_initiated=1
+/system/etc/init/perfetto.rc:    stop traced_probes
+/system/etc/init/perfetto.rc:on property:persist.traced.enable=1 && property:debug.atrace.user_initiated=""
+/system/etc/init/perfetto.rc:    start traced_probes
+/system/etc/init/perfetto.rc:# Possible values of persist.traced.enable:
+/system/etc/init/perfetto.rc:on property:persist.traced.enable=0
+/system/etc/init/perfetto.rc:    stop traced
+/system/etc/init/perfetto.rc:    stop traced_relay
+/system/etc/init/perfetto.rc:    stop traced_probes
+/system/etc/init/perfetto.rc:on property:persist.traced.enable=1
+/system/etc/init/perfetto.rc:    # Trace files need to be:
+/system/etc/init/perfetto.rc:    mkdir /data/misc/perfetto-traces 0773 root shell
+/system/etc/init/perfetto.rc:    # Traces in this directory are only accessed by dumpstate (read+unlink) and
+/system/etc/init/perfetto.rc:    mkdir /data/misc/perfetto-traces/bugreport 0773 root shell
+/system/etc/init/perfetto.rc:    # Traces in this directory are only accessed by system server
+/system/etc/init/perfetto.rc:    mkdir /data/misc/perfetto-traces/profiling 0777 root shell
+/system/etc/init/perfetto.rc:    stop traced_relay
+/system/etc/init/perfetto.rc:    start traced
+/system/etc/init/perfetto.rc:    start traced_probes
+/system/etc/init/perfetto.rc:on property:persist.traced.enable=2
+/system/etc/init/perfetto.rc:    stop traced
+/system/etc/init/perfetto.rc:    start traced_relay
+/system/etc/init/perfetto.rc:    start traced_probes
+/system/etc/init/perfetto.rc:    rm /data/misc/perfetto-traces/.guardraildata
+/system/etc/init/perfetto.rc:#  perfetto_trace_on_boot - Starts a perfetto trace on boot
+/system/etc/init/perfetto.rc:# sure that perfetto_trace_on_boot is started only once on boot (otherwise,
+/system/etc/init/perfetto.rc:# whenever persist.debug.perfetto.boottrace=1 is set, perfetto_trace_on_boot
+/system/etc/init/perfetto.rc:# persist.debug.perfetto.boottrace=1 can be manually set after boot (to record
+/system/etc/init/perfetto.rc:# a trace on the next reboot) and we don't want to immediately start a trace
+/system/etc/init/perfetto.rc:# sys.trace.traced_started is set by traced after listen()ing on the consumer
+/system/etc/init/perfetto.rc:# socket. Without this, perfetto could try to connect to traced before traced
+/system/etc/init/perfetto.rc:on perfetto_maybe_trace_on_boot && property:persist.debug.perfetto.boottrace=1 && property:persist.traced.enable=1 && property:sys.trace.traced_started=1
+/system/etc/init/perfetto.rc:    setprop persist.debug.perfetto.boottrace ""
+/system/etc/init/perfetto.rc:    rm /data/misc/perfetto-traces/boottrace.perfetto-trace
+/system/etc/init/perfetto.rc:    start perfetto_trace_on_boot
+/system/etc/init/perfetto.rc:    trigger perfetto_maybe_trace_on_boot
+/system/etc/init/perfetto.rc:service perfetto_trace_on_boot /system/bin/perfetto -c /data/misc/perfetto-configs/boottrace.pbtxt --txt -o /data/misc/perfetto-traces/boottrace.perfetto-trace
+/system/etc/init/perfetto.rc:# To use this, add a trigger with mode STOP_TRACING in the configuration used in perfetto_trace_on_boot.
+/system/etc/init/perfetto.rc:# the name specified in configuration used in perfetto_trace_on_boot.
+/system/etc/init/perfetto.rc:on property:sys.boot_completed=1 && property:init.svc.perfetto_trace_on_boot=running
+/system/etc/init/perfetto.rc:    exec -- /system/bin/perfetto -c /data/misc/perfetto-configs/stopboottracetrigger.pbtxt --txt
+/system/etc/init/perfetto.rc:# Forcefully enable select userspace (atrace) tracing categories early into the
+/system/etc/init/perfetto.rc:on late-init && property:ro.boot.fastboot.boottrace=enabled
+/system/etc/init/perfetto.rc:    setprop debug.atrace.tags.enableflags 802922
+/system/etc/init/perfetto.rc:# disable on boot complete when using textual ftrace tracing without perfetto.
+/system/etc/init/perfetto.rc:on property:sys.boot_completed=1 && property:ro.boot.fastboot.boottrace=enabled && property:init.svc.perfetto_trace_on_boot=
+/system/etc/init/perfetto.rc:    setprop debug.atrace.tags.enableflags 0
+/system/etc/init/perfetto.rc:# sys.trace.traced_started is set by traced after listen()ing on the consumer
+/system/etc/init/perfetto.rc:# socket. Without this, perfetto could try to connect to traced before traced
+/system/etc/init/perfetto.rc:on property:persist.debug.perfetto.persistent_sysui_tracing_for_bugreport=1 && property:persist.traced.enable=1 && property:ro.debuggable=1 && property:sys.trace.traced_started=1
+/system/etc/init/perfetto.rc:# If something disables traced, we don't want init to respawn the service (that will fail) continuously.
+/system/etc/init/perfetto.rc:on property:persist.traced.enable=0
+/system/etc/init/pmgd.rc:# them.  The destination directory is /data/misc/perfetto-traces/.
+/system/etc/init/profcollectd.rc:    mkdir /data/misc/profcollectd/trace 0770 shell shell
+/system/etc/init/tombstoned.rc:    socket tombstoned_java_trace seqpacket 0666 system system
+/system/etc/init/traced_perf.rc:service traced_perf /system/bin/traced_perf
+/system/etc/init/traced_perf.rc:    socket traced_perf stream 0666 root root
+/system/etc/init/traced_perf.rc:    group nobody readproc readtracefs
+/system/etc/init/traced_perf.rc:# * |persist.traced_perf.enable| forces daemon to run unconditionally
+/system/etc/init/traced_perf.rc:# * otherwise, follow |traced.lazy.traced_perf| as an on-demand service
+/system/etc/init/traced_perf.rc:on property:persist.traced_perf.enable=1
+/system/etc/init/traced_perf.rc:    start traced_perf
+/system/etc/init/traced_perf.rc:on property:persist.traced_perf.enable="" && property:sys.init.perf_lsm_hooks=""
+/system/etc/init/traced_perf.rc:    stop traced_perf
+/system/etc/init/traced_perf.rc:on property:persist.traced_perf.enable="" && property:sys.init.perf_lsm_hooks=1 && property:traced.lazy.traced_perf=1
+/system/etc/init/traced_perf.rc:    start traced_perf
+/system/etc/init/traced_perf.rc:on property:persist.traced_perf.enable="" && property:sys.init.perf_lsm_hooks=1 && property:traced.lazy.traced_perf=""
+/system/etc/init/traced_perf.rc:    stop traced_perf
+/system/etc/init/traced_perf.rc:on property:persist.traced_perf.enable=0
+/system/etc/init/traced_perf.rc:    setprop persist.traced_perf.enable ""
+/system/etc/init/wifi.rc:   # Create trace buffer, and set basic configuration.
+/system/etc/init/wifi.rc:   write /sys/kernel/tracing/instances/wifi/trace_options disable_on_free
+/system/etc/init/wifi.rc:   # Set DAC to allow system to enable/disable, and read wifi trace
+/system/etc/init/wifi.rc:   chown system /sys/kernel/tracing/instances/wifi/trace
+/system/etc/init/wifi.rc:   chmod 600 /sys/kernel/tracing/instances/wifi/trace

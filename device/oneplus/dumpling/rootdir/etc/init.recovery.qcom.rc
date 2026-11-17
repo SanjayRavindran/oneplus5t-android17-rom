@@ -1,0 +1,8 @@
+on init
+    symlink /dev/block/platform/soc@0/1da4000.ufshc /dev/block/bootdevice
+    setprop sys.usb.controller a800000.usb
+    setprop sys.usb.configfs 1
+    write /sys/class/backlight/c994000.dsi.0/brightness 51
+
+on fs
+    insmod /vendor/lib/modules/qcom-rng.ko

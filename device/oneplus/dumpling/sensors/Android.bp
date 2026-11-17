@@ -1,0 +1,23 @@
+cc_binary {
+    name: "android.hardware.sensors-service.oneplus5t",
+    relative_install_path: "hw",
+    init_rc: ["sensors-oneplus5t.rc"],
+    vintf_fragments: ["sensors-oneplus5t.xml"],
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "libcutils",
+        "libfmq",
+        "liblog",
+        "libpower",
+        "libutils",
+        "android.hardware.common-V2-ndk",
+        "android.hardware.common.fmq-V1-ndk",
+        "android.hardware.sensors-V3-ndk",
+    ],
+    srcs: [
+        "SlpiSensors.cpp",
+        "main.cpp",
+    ],
+}
